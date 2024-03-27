@@ -924,7 +924,7 @@ static GLFWbool createMetalLayer(_GLFWwindow* window)
         return GLFW_FALSE;
     }
 
-    if (window->ns.retina)
+    if (window->ns.scaleFramebuffer)
         [window->ns.layer setContentsScale:[window->ns.object backingScaleFactor]];
 
     [window->ns.view setLayer:window->ns.layer];
