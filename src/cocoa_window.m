@@ -912,6 +912,8 @@ static GLFWbool createMetalLayer(_GLFWwindow* window)
                         "Cocoa: Failed to create layer for view");
         return GLFW_FALSE;
     }
+    CGSize drawsize = { window->ns.width, window->ns.height };
+    [window->ns.layer setDrawableSize:drawsize];
 
     if (window->ns.scaleFramebuffer)
         [window->ns.layer setContentsScale:[window->ns.object backingScaleFactor]];
